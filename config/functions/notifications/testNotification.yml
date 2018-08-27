@@ -1,0 +1,40 @@
+handler: handlers/notifications.testNotification
+name: ${self:custom.constants.defaults.prefix}${self:service}-testNotification
+events:
+  - http:
+      path: /test/{devicecode}
+      method: post
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+        # documentation:
+        #     summary: "Get all attributes"
+        #     description: "Gets all the attributes present in the system"
+        #     requestHeaders:
+        #     -
+        #       name: "Authorization"
+        #       description: "Custom Authorizer Header Token"
+        #     queryParams:
+        #     -
+        #       name: "offset"
+        #       description: "No of records to skip"
+        #     -
+        #       name: "sort"
+        #       description: "sort by column name"
+        #     methodResponses:
+        #     -
+        #       statusCode: "200"
+        #       responseBody:
+        #         description: "Response body description"
+        #       responseHeaders:
+        #         -
+        #           name: "x-superheader"
+        #           description: "this is a super header"
+        #       responseModels:
+        #         "application/json": "CreateResponse"
+        #     -
+        #       statusCode: "400"
+        #       responseModels:
+        #         "application/json": "ErrorResponse"

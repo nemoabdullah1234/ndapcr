@@ -1,0 +1,11 @@
+handler: handlers/location/zone.saveZone
+name: ${self:custom.constants.defaults.prefix}${self:service}-saveZone
+events:
+  - http:
+      path: /zones
+      method: post
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

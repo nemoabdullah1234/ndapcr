@@ -1,0 +1,12 @@
+handler: handlers/order.saveOrder
+name: ${self:custom.constants.defaults.prefix}${self:service}-save
+timeout: 30
+events:
+  - http:
+      path: /
+      method: post
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

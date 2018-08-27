@@ -1,0 +1,11 @@
+handler: handlers/iam.getGroupPolicy
+name: ${self:custom.constants.defaults.prefix}${self:service}-group-policy-get
+events:
+  - http:
+      path: /group/policy
+      method: get
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

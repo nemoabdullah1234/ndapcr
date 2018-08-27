@@ -1,0 +1,37 @@
+handler: routing/things.routeBeacons
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeBeacons
+events:
+  - http:
+      path: /beacons/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  - http:
+      path: /beacons
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  
+  - http:
+      path: /beacons/{id}
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+
+  - http:
+      path: /beacons
+      method: post
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

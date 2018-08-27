@@ -1,0 +1,11 @@
+handler: handlers/report.ordersPerHospital
+name: ${self:custom.constants.defaults.prefix}${self:service}-ordersPerHospital
+events:
+  - http:
+      path: /orders-per-hospital
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

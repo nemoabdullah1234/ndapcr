@@ -1,0 +1,7 @@
+handler: handlers/country.getCountries
+name: ${self:custom.constants.defaults.prefix}${self:service}-get-countries
+events:
+  - http:
+      path: countries
+      method: get
+      cors: true

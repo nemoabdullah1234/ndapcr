@@ -1,0 +1,11 @@
+handler: handlers/akng/products.getProductsAtLocation
+name: ${self:custom.constants.defaults.prefix}${self:service}-productsbylocation
+events:
+  - http:
+      path: /productsbylocation
+      method: get
+      cors: true
+      #authorizer: 
+      #  name: customauthorizer
+      #  resultTtlInSeconds: 0
+      #  identitySource: method.request.header.Authorization

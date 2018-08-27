@@ -1,0 +1,11 @@
+handler: handlers/shipment.getShipmentById
+name: ${self:custom.constants.defaults.prefix}${self:service}-getByIdNoAuth
+events:
+  - http:
+      path: /detail/{id}
+      method: get
+      cors: true
+      #authorizer:
+      #  name: customauthorizer
+      #  resultTtlInSeconds: 0
+       # identitySource: method.request.header.Authorization

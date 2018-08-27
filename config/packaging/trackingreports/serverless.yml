@@ -1,0 +1,88 @@
+# service name
+service: trackingreports
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+# all custom variables will only go under custom root. serverless does not allow any other root name
+custom: 
+  paths:
+    configPath: "./../../../config/config"
+    functionPath: "./../../../config/functions"
+
+  constants: ${file(${self:custom.paths.configPath}/constants.serverless.yml)}
+
+provider:
+  # fixed - cannot change
+  name: aws
+  # fixed - cannot change
+  runtime: nodejs6.10
+  # default role for most of the functions for specific functions use role in function
+  role: ${self:custom.constants.defaults.role}
+  # default function versoning is on required for serverless-alias plugin
+  versionFunctions: ${self:custom.constants.defaults.versionFunctions}
+  stage: ${opt:stage, self:custom.constants.defaults.stage}
+  region: ${self:custom.constants.defaults.region}
+  memorySize: ${self:custom.constants.defaults.memorySize}
+  timeout: ${self:custom.constants.defaults.timeout}
+  deploymentBucket: ${self:custom.constants.defaults.deploymentBucketName}
+
+  vpc: ${file(${self:custom.paths.configPath}/vpc.serverless.yml)}
+  environment: ${file(${self:custom.paths.configPath}/environment.serverless.yml):${self:provider.alias}}
+
+  # you can add packaging information here
+package:
+  include: ${file(${self:custom.paths.configPath}/includes.serverless.yml)}
+  exclude: ${file(${self:custom.paths.configPath}/excludes.serverless.yml)}
+
+plugins:
+  - serverless-offline
+  - serverless-aws-alias
+
+resources:
+  Resources:
+    # change default generated api name
+    ApiGatewayRestApi:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: ${self:custom.constants.defaults.prefix}${self:service}
+
+functions:
+
+  customauthorizer:
+    handler: handlers/iam.customauthorizer
+    name: ${self:custom.constants.defaults.prefix}${self:service}-authorizer
+
+  routeTrackingReports:  ${file(${self:custom.paths.functionPath}/trackingreports/trackingreports.yml)}
+
+
+  #productTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/productTracking.yml)}
+  # pointSensorTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/pointSensorTracking.yml)}
+  #pointLocationTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/pointLocationTracking.yml)}
+  # mobileLogs:  ${file(${self:custom.paths.functionPath}/trackingreports/mobileLogs.yml)}
+  #rawLocationTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/rawLocationTracking.yml)}
+  # pointStatusTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/pointStatusTracking.yml)}
+  # rawSensorsTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/rawSensorsTracking.yml)}
+
+  # productLocator:  ${file(${self:custom.paths.functionPath}/trackingreports/productLocator.yml)}
+  # productLocatorHistory:  ${file(${self:custom.paths.functionPath}/trackingreports/productLocatorHistory.yml)}
+  productLocatorMap:  ${file(${self:custom.paths.functionPath}/trackingreports/productLocatorMap.yml)}
+  productLocatorHistoryMap:  ${file(${self:custom.paths.functionPath}/trackingreports/productLocatorHistoryMap.yml)}
+
+  # deviceLocator:  ${file(${self:custom.paths.functionPath}/trackingreports/deviceLocator.yml)}
+  deviceLocatorMap:  ${file(${self:custom.paths.functionPath}/trackingreports/deviceLocatorMap.yml)}
+  # deviceLocatorHistory:  ${file(${self:custom.paths.functionPath}/trackingreports/deviceLocatorHistory.yml)}
+  deviceLocatorHistoryMap:  ${file(${self:custom.paths.functionPath}/trackingreports/deviceLocatorHistoryMap.yml)}
+  
+  # userLocatorList: ${file(${self:custom.paths.functionPath}/trackingreports/userLocatorList.yml)}
+  userLocatorMap:  ${file(${self:custom.paths.functionPath}/trackingreports/userLocatorMap.yml)}
+  # userLocatorHistory:  ${file(${self:custom.paths.functionPath}/trackingreports/userLocatorHistory.yml)}
+  userLocatorHistoryMap:  ${file(${self:custom.paths.functionPath}/trackingreports/userLocatorHistoryMap.yml)}
+
+  # sensorLocator:  ${file(${self:custom.paths.functionPath}/trackingreports/sensorLocator.yml)}
+  sensorLocatorHistory:  ${file(${self:custom.paths.functionPath}/trackingreports/sensorLocatorHistory.yml)}
+  shipmentLocatorMap:  ${file(${self:custom.paths.functionPath}/trackingreports/shipmentLocatorMap.yml)}
+  # sensorEntraceTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/sensorEntraceTracking.yml)}
+  # userEntraceTracking:  ${file(${self:custom.paths.functionPath}/trackingreports/userEntraceTracking.yml)}
+  shipmentLocatorHistoryMap:  ${file(${self:custom.paths.functionPath}/trackingreports/shipmentLocatorHistoryMap.yml)}

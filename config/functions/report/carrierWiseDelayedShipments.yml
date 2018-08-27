@@ -1,0 +1,11 @@
+handler: handlers/report.carrierWiseDelayedShipments
+name: ${self:custom.constants.defaults.prefix}${self:service}-carrierWiseDelayedShipments
+events:
+  - http:
+      path: /carrier-wise-delayed-shipments
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

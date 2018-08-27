@@ -1,0 +1,11 @@
+handler: handlers/report.mostUsedProductsPerSurgeon
+name: ${self:custom.constants.defaults.prefix}${self:service}-mostUsedProductsPerSurgeon
+events:
+  - http:
+      path: /most-used-products-per-surgeon
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,11 @@
+handler: handlers/things.saveThing
+name: ${self:custom.constants.defaults.prefix}${self:service}-beacons-save
+events:
+  - http:
+      path: /beacons
+      method: post
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

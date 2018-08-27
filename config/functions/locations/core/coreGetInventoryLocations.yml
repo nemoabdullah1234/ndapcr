@@ -1,0 +1,11 @@
+handler: handlers/location/locations.getNearbyLocationsForMobile
+name: ${self:custom.constants.defaults.prefix}${self:service}-getInventory
+events:
+  - http:
+      path: /inventory
+      method: get
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

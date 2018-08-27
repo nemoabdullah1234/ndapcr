@@ -1,0 +1,20 @@
+handler: routing/configurations.routeConfiguration
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeConfiguration
+events:
+  - http:
+      path: /
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+
+  - http:
+      path: /
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

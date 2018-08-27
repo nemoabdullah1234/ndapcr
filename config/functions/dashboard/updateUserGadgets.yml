@@ -1,0 +1,11 @@
+handler: handlers/dashboard.updateUserGadgetPositions
+name: ${self:custom.constants.defaults.prefix}${self:service}-update-user-gadgets
+events:
+  - http:
+      path: /gadgets/user
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

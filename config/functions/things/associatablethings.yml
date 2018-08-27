@@ -1,0 +1,7 @@
+handler: handlers/things.getAssociatableThings
+name: ${self:custom.constants.defaults.prefix}${self:service}-associatablethings
+events:
+  - http:
+      path: /associatablethings
+      method: get
+      cors: true

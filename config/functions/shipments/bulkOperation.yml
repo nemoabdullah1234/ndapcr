@@ -1,0 +1,11 @@
+handler: handlers/shipment.bulkOperation
+name: ${self:custom.constants.defaults.prefix}${self:service}-bulkOperation
+events:
+  - http:
+      path: /bulk
+      method: put
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

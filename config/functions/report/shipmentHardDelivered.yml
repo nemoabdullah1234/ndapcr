@@ -1,0 +1,11 @@
+handler: handlers/report.shipmentHardDelivered
+name: ${self:custom.constants.defaults.prefix}${self:service}-shipmentHardDelivered
+events:
+  - http:
+      path: /shipment-hard-delivered
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

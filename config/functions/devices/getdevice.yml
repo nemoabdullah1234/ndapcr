@@ -1,0 +1,11 @@
+handler: handlers/device.getDevices
+name: ${self:custom.constants.defaults.prefix}${self:service}-devices-get
+events:
+  - http:
+      path: /devices
+      method: get
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

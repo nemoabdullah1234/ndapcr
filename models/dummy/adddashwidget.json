@@ -1,0 +1,130 @@
+{
+  "code": 200,
+  "message": "Available Widgets",
+  "recordCount": 4,
+  "totalRecords": 4,
+  "data": [
+    {
+      "code": "gadget-order-status",
+      "name": "Order Status",
+      "description": "Displaying status-wise count for orders created in last 15 days",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/138/138345.svg"
+    },
+    {
+      "code": "gadget-shipment-status",
+      "name": "Shipment Status",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/25/25617.svg"
+    },
+    {
+      "code": "gadget-orders-by-surgery-type",
+      "name": "Orders By Surgery Type",
+      "description": "Displaying orders count grouped by surgeries",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/148/148845.svg"
+    },
+    {
+      "code": "gadget-orders-per-surgeon",
+      "name": "Orders Per Surgeon",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/138/138339.svg"
+    },
+    {
+      "code": "gadget-orders-per-sales-rep",
+      "name": "Orders Per SalesRep",
+      "description": "Displaying orders count grouped by sales representatives",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/139/139104.svg"
+    },
+    {
+      "code": "gadget-shipments-per-carrier",
+      "name": "Shipments Per Carrier",
+      "description": "Displaying shipments count grouped by carriers",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/138/138345.svg"
+    },
+    {
+      "code": "gadget-orders-per-hospital",
+      "name": "Orders Per Hospital",
+      "description": "Displaying orders count grouped by hospitals",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/25/25617.svg"
+    },
+    {
+      "code": "gadget-upcoming-order-status",
+      "name": "Upcoming Order Status",
+      "description": "Displaying status of orders whose surgery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/148/148845.svg"
+    },
+    {
+      "code": "gadget-shipment-due",
+      "name": "Shipment Due",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/138/138339.svg"
+    },
+    {
+      "code": "gadget-open-service-request",
+      "name": "Open Service Request",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/139/139104.svg"
+    },
+    {
+      "code": "gadget-app-status",
+      "name": "App Status",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/138/138345.svg"
+    },
+    {
+      "code": "gadget-order-due",
+      "name": "Order Due",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/25/25617.svg"
+    },
+    {
+      "code": "gadget-upcoming-shipments-status",
+      "name": "Upcoming Shipments Status",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/148/148845.svg"
+    },
+    {
+      "code": "gadget-total-orders-shipments",
+      "name": "Total Orders & Shipments",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/148/148845.svg"
+    },
+    {
+      "code": "gadget-shipments-in-jeopardy",
+      "name": "Shipments in Jeopardy",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/148/148845.svg"
+    },
+    {
+      "code": "gadget-orders-per-city",
+      "name": "Orders Per City",
+      "description":
+        "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+      "type": "Graph",
+      "image": "https://image.flaticon.com/icons/svg/148/148845.svg"
+    }
+  ]
+}

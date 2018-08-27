@@ -1,0 +1,7 @@
+handler: handlers/dateFormat.getDateFormats
+name: ${self:custom.constants.defaults.prefix}${self:service}-get-dateformat
+events:
+  - http:
+      path: dateformat
+      method: get
+      cors: true

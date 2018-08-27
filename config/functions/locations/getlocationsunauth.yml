@@ -1,0 +1,11 @@
+handler: handlers/location/locations.getLocations
+name: ${self:custom.constants.defaults.prefix}${self:service}-getUnauth
+events:
+  - http:
+      path: /list
+      method: get
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

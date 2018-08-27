@@ -1,0 +1,11 @@
+handler: handlers/nfcTag.getScanHistoryDataForProduct
+name: ${self:custom.constants.defaults.prefix}${self:service}-nfctag-getScanHistoryDataForProduct
+events:
+  - http:
+      path: /nfctags/scanhistory/{productId}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

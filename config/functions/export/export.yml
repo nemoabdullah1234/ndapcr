@@ -1,0 +1,3 @@
+handler: handlers/exports.export
+name: ${self:custom.constants.defaults.prefix}${self:service}-export
+timeout: 300

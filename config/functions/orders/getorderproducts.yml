@@ -1,0 +1,11 @@
+handler: handlers/order.getOrderProducts
+name: ${self:custom.constants.defaults.prefix}${self:service}-getProductsFromOrder
+events:
+  - http:
+      path: /products
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

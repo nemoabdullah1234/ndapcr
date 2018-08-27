@@ -1,0 +1,213 @@
+{
+  "code": 200,
+  "message": "User Widgets",
+  "recordCount": 4,
+  "totalRecords": 4,
+  "data": {
+    "displayScheme": "fullWidth",
+    "widgets": [
+      {
+        "id": "widgetID1",
+        "type": "gadget-order-status",
+        "gadgetId": "gadget-order-status",
+        "visible": true,
+        "name": "Order Status",
+        "helpText": "Displaying status-wise count for orders created in last 15 days",
+        "position": {
+          "section": "left-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID2",
+        "type": "gadget-shipment-status",
+        "gadgetId": "gadget-shipment-status",
+        "name": "Shipment Status",
+        "visible": true,
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "left-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID3",
+        "type": "gadget-orders-by-surgery-type",
+        "gadgetId": "gadget-orders-by-surgery-type",
+        "name": "Orders By Surgery Type",
+        "visible": true,
+        "helpText": "Displaying orders count grouped by surgeries",
+        "position": {
+          "section": "left-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID4",
+        "type": "gadget-orders-per-surgeon",
+        "gadgetId": "gadget-orders-per-surgeon",
+        "name": "Orders Per Surgeon",
+        "visible": true,
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "left-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID5",
+        "type": "gadget-orders-per-sales-rep",
+        "gadgetId": "gadget-orders-per-sales-rep",
+        "visible": true,
+        "name": "Orders Per SalesRep",
+        "helpText": "Displaying orders count grouped by sales representatives",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID6",
+        "type": "gadget-shipments-per-carrier",
+        "gadgetId": "gadget-shipments-per-carrier",
+        "name": "Shipments Per Carrier",
+        "visible": true,
+        "helpText": "Displaying shipments count grouped by carriers",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID7",
+        "type": "gadget-orders-per-hospital",
+        "gadgetId": "gadget-orders-per-hospital",
+        "name": "Orders Per Hospital",
+        "helpText": "Displaying orders count grouped by hospitals",
+        "visible": true,
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID8",
+        "type": "gadget-upcoming-order-status",
+        "gadgetId": "gadget-upcoming-order-status",
+        "name": "Upcoming Order Status",
+        "visible": true,
+        "helpText": "Displaying status of orders whose surgery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID9",
+        "type": "gadget-shipment-due",
+        "gadgetId": "gadget-shipment-due",
+        "visible": true,
+        "name": "Shipment Due",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID10",
+        "type": "gadget-open-service-request",
+        "gadgetId": "gadget-open-service-request",
+        "visible": true,
+        "name": "Open Service Request",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID11",
+        "type": "gadget-app-status",
+        "gadgetId": "gadget-app-status",
+        "visible": true,
+        "name": "App Status",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID12",
+        "type": "gadget-order-due",
+        "gadgetId": "gadget-order-due",
+        "visible": true,
+        "name": "Order Due",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID13",
+        "type": "gadget-upcoming-shipments-status",
+        "gadgetId": "gadget-upcoming-shipments-status",
+        "visible": true,
+        "name": "Upcoming Shipments Status",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID14",
+        "type": "gadget-total-orders-shipments",
+        "gadgetId": "gadget-total-orders-shipments",
+        "visible": true,
+        "name": "Total Orders & Shipments",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID15",
+        "type": "gadget-shipments-in-jeopardy",
+        "gadgetId": "gadget-shipments-in-jeopardy",
+        "visible": true,
+        "name": "Shipments In Jeopardy",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      },
+      {
+        "id": "widgetID16",
+        "type": "gadget-orders-per-city",
+        "gadgetId": "gadget-orders-per-city",
+        "visible": true,
+        "name": "Orders Per City",
+        "helpText":
+          "Displaying status of shipments whose scheduled delivery date/time is in the selected range",
+        "position": {
+          "section": "right-section",
+          "orderPosition": 1
+        }
+      }
+    ]
+  }
+}

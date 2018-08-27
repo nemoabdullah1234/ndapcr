@@ -1,0 +1,19 @@
+handler: routing/auditTrail.routeAuditTrail
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeAuditTrail
+events:
+  - http:
+      path: /
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  - http:
+      path: /{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,7 @@
+handler: handlers/things.getThingByCode
+name: ${self:custom.constants.defaults.prefix}${self:service}-getByCode
+events:
+  - http:
+      path: /getbycode
+      method: get
+      cors: true

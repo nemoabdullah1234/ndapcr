@@ -1,0 +1,60 @@
+# service name
+service: emails
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+# all custom variables will only go under custom root. serverless does not allow any other root name
+custom: 
+  paths:
+    configPath: "./../../../config/config"
+    functionPath: "./../../../config/functions"
+
+  constants: ${file(${self:custom.paths.configPath}/constants.serverless.yml)}
+  authrizerArn: arn:aws:lambda:${self:provider.region}:${self:provider.environment.accountNo}:function:${self:custom.constants.authrizer}:${self:provider.stage}
+  
+provider:
+  # fixed - cannot change
+  name: aws
+  # fixed - cannot change
+  runtime: nodejs6.10
+  # default role for most of the functions for specific functions use role in function
+  role: ${self:custom.constants.defaults.role}
+  # default function versoning is on required for serverless-alias plugin
+  versionFunctions: ${self:custom.constants.defaults.versionFunctions}
+  stage: ${opt:stage, self:custom.constants.defaults.stage}
+  region: ${self:custom.constants.defaults.region}
+  memorySize: ${self:custom.constants.defaults.memorySize}
+  timeout: ${self:custom.constants.defaults.timeout}
+  deploymentBucket: ${self:custom.constants.defaults.deploymentBucketName}
+
+  vpc: ${file(${self:custom.paths.configPath}/vpc.serverless.yml)}
+  environment: ${file(${self:custom.paths.configPath}/environment.serverless.yml):${self:provider.alias}}
+
+  # you can add packaging information here
+package:
+  include: ${file(${self:custom.paths.configPath}/includes.serverless.yml)}
+  exclude: ${file(${self:custom.paths.configPath}/excludes.serverless.yml)}
+
+plugins:
+  - serverless-offline
+  - serverless-aws-alias
+
+resources:
+  Resources:
+    # change default generated api name
+    ApiGatewayRestApi:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: ${self:custom.constants.defaults.prefix}${self:service}
+
+functions:
+
+  customauthorizer:
+    handler: handlers/iam.customauthorizer
+    name: ${self:custom.constants.defaults.prefix}${self:service}-authorizer
+
+  # emailss
+  sendEmail: ${file(${self:custom.paths.functionPath}/emails/sendemail.yml)}
+  sendNotifications: ${file(${self:custom.paths.functionPath}/emails/snsnotifications.yml)}

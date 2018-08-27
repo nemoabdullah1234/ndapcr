@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <table width="720" border="0" style="border-collapse:collapse; border:1px solid #177287; font-family:'Arial'; font-size:12px;">
+        <tbody>
+            <!--<tr>
+                    <td height="10" bgcolor="#ffb236"></td>
+                </tr>-->
+            <!--<tr>
+                    <td height="80" bgcolor="#d6523b" align="left"><img alt="Logo" title="Logo" style="display:block" width="175" height="80" src="<?php //echo adminurl %>/static/images/logo.jpg"></td>
+                </tr>-->
+            <tr>
+                <td height="30" bgcolor="#177287" align="left"></td>
+            </tr>
+            <tr>
+                <td valign="top" style="padding-left:20px; padding-top:10px; padding-right:20px; padding-bottom:10px; font-size:12px;">
+                    <p>Hi
+                        <%= name %>,</p>
+                    <p>Thank you for registering with
+                        <%=companyName%>. We're glad that you're interested in our product.</p>
+                    <br>
+                    <p>Your domain :
+                        <a href="<%= domain %>" target="_blank" style="color:#177287;">
+                            <%= domain %>
+                        </a>
+                    </p>
+
+                    <p>Your Email :
+                        <a href="#" target="_blank" style="color:#177287;">
+                            <%= email %>
+                        </a>
+                    </p>
+                    <br>
+                    <p>To activate your account, please set your
+                        <%=companyName%> password either by click
+                            <a href="<%= link %>" target="_blank" style="color:#177287;">here</a> or paste the following link into your browser:</p>
+                    <p>
+                        <a href="<%= link %>" target="_blank" style="color:#177287;">
+                            <%= link %>
+                        </a>
+                    </p>
+                    <p>And do reach out to us at
+                        <a href="mailto:support@nicbit.com" target="_blank" style="color:#177287;">support@nicbit.com</a> if there's anything that we can help you out with.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Thanks</p>
+                    <p style="color:#177287; font-size:14px;">
+                        <strong>
+                            <%= salutationText %>
+                        </strong>
+                    </p>
+
+
+
+                </td>
+            </tr>
+            <tr>
+                <td height="30" bgcolor="#177287" style="padding-left:20px; color:#fff;">Copyright &copy; 2015
+                    <%=companyName%>, Inc. All rights reserved.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

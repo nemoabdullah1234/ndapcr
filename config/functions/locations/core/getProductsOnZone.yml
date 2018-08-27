@@ -1,0 +1,11 @@
+handler: handlers/location/zone.getProductsOnZone
+name: ${self:custom.constants.defaults.prefix}${self:service}-getProductsOnZone
+events:
+  - http:
+      path: /zones/{id}/products
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

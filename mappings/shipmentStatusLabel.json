@@ -1,0 +1,12 @@
+{
+  "Open" : 10,
+  "Scheduled" : 20,
+  "Partial Shipped" : 25,
+  "Soft Shipped" : 30,
+  "In Transit": 40,
+  "Partial Delivered" : 45,
+  "Soft Delivered" : 50,
+  "Delivered" : 60,
+  "Canceled" : 70,
+  "Closed" : 90
+}

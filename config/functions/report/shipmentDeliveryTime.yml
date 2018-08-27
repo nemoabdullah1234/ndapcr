@@ -1,0 +1,11 @@
+handler: handlers/report.shipmentDeliveryTime
+name: ${self:custom.constants.defaults.prefix}${self:service}-shipmentDeliveryTime
+events:
+  - http:
+      path: /shipment-delivery-time
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

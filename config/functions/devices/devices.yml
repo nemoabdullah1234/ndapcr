@@ -1,0 +1,37 @@
+handler: routing/things.routeDevices
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeDevices
+events:
+  - http:
+      path: /devices/{id}
+      method: get
+      cors: true
+      # authorizer:
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization
+  - http:
+      path: /devices
+      method: get
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization
+  
+  - http:
+      path: /devices/{id}
+      method: put
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization
+
+  - http:
+      path: /devices
+      method: post
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

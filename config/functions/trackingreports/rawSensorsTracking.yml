@@ -1,0 +1,12 @@
+handler: handlers/trackingreports.rawSensorsTracking
+name: ${self:custom.constants.defaults.prefix}${self:service}-rawSensorsTracking
+timeout: 30
+events:
+  - http:
+      path: /rawsensors-tracking
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

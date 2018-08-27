@@ -1,0 +1,12 @@
+handler: handlers/diagnostics.productTracking
+name: ${self:custom.constants.defaults.prefix}${self:service}-productTracking
+timeout: 30
+events:
+  - http:
+      path: /product-tracking
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

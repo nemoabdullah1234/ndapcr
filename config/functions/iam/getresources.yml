@@ -1,0 +1,7 @@
+handler: handlers/apiGateway.getResources
+name: ${self:custom.constants.defaults.prefix}${self:service}-resources-get
+events:
+  - http:
+      path: /resources
+      method: get
+      cors: true

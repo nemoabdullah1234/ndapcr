@@ -1,0 +1,32 @@
+handler: handlers/locations.getFloorsList
+events:
+  - http:
+      path: locations/floorlist
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+      documentation:
+          summary: "Get Floor List"
+          description: "Get List of floors present in a location"
+          requestHeaders:
+            -
+              name: "Authorization"
+              description: "Custom Authorizer Header Token"
+          methodResponses:
+            -
+              statusCode: "200"
+              responseBody:
+                description: "Response body description"
+              responseHeaders:
+                -
+                  name: "x-superheader"
+                  description: "this is a super header"
+              responseModels:
+                "application/json": "CreateResponse"
+            -
+              statusCode: "400"
+              responseModels:
+                "application/json": "ErrorResponse"

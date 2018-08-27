@@ -1,0 +1,11 @@
+handler: handlers/trackingreports.shipmentLocatorMap
+name: ${self:custom.constants.defaults.prefix}${self:service}-shipmentLocatorMap
+events:
+  - http:
+      path: /shipment-locator-map
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

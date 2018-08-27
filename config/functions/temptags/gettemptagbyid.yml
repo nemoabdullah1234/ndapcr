@@ -1,0 +1,11 @@
+handler: handlers/tempTags.getTempTagbyId
+name: ${self:custom.constants.defaults.prefix}${self:service}-temptags-getById
+events:
+  - http:
+      path: /temptags/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

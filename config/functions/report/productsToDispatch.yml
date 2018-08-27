@@ -1,0 +1,12 @@
+handler: handlers/report.productsToDispatch
+name: ${self:custom.constants.defaults.prefix}${self:service}-productsToDispatch
+timeout: 30
+events:
+  - http:
+      path: /products-ready-to-dispatch
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

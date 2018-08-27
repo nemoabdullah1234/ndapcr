@@ -1,0 +1,11 @@
+{
+  "Draft" : 5,
+  "Open" : 10,
+  "Partial Shipped" : 25,
+  "In Transit": 40,
+  "Partial Delivered" : 45,
+  "Delivered" : 60,
+  "Canceled" : 70,
+  "Submitted" : 80,
+  "Closed" : 90
+}

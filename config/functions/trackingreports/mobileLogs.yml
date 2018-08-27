@@ -1,0 +1,12 @@
+handler: handlers/trackingreports.mobileLogs
+name: ${self:custom.constants.defaults.prefix}${self:service}-mobileLogs
+timeout: 30
+events:
+  - http:
+      path: /mobilelogs
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

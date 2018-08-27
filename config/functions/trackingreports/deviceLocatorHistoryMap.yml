@@ -1,0 +1,11 @@
+handler: handlers/trackingreports.deviceLocatorHistoryMap
+name: ${self:custom.constants.defaults.prefix}${self:service}-deviceLocatorHistoryMap
+events:
+  - http:
+      path: /device-locator-history-map/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

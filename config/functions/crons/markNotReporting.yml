@@ -1,0 +1,4 @@
+handler: handlers/cron.markNotReporting
+name: ${self:custom.constants.defaults.prefix}${self:service}-markNotReporing
+events:
+  - schedule: rate(1 hour)

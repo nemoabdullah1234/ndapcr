@@ -1,0 +1,239 @@
+local: 
+  defaultRecordsPerPage: 20
+  dbURI : 'mongodb://34.197.121.5:27017/ak-intulio-dev' # public DSN
+  trackingDbURI : 'mongodb://34.197.121.5:27017/trackingtestdb'
+  SLS_DEBUG: '*'
+  iamURI: "https://iam.amazonaws.com/"
+  kms: 0
+  cacheHost: "localhost"
+  cachePort: 11211
+  accountNo: '012179919676'
+  accessKeyId: <Your AWS Access key>
+  secretAccessKey: <Your Secret AWS access key>
+  region: 'us-east-1'
+  stage: local
+  batteryfetchCount: 4
+  syncCount: 500
+  trackingLambda: 'ak-track-processTracking'
+  shipmentStatusLambda:  'ak-track-processShipmentStatus'
+  productTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-productTracking'
+  shipmentTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-shipmentTracking'
+  userTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-userTracking'
+  deviceTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-deviceTracking'
+  SENDGRID_API_KEY: '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'
+  cloudWatchTrackingLatencyMatric: 'tracking_qc_data_debug'
+  adminurl: 'http://traker.akwa.io'
+  enableAutoShipped: 1
+  enableAutoDelivered: 1
+  nearLocationDistanceMeters: 5000
+  docBucket: akwa-documents-qc
+  cognitoUserpoolId: us-east-1_zI0af0OBy
+  cognitoClientId: 2po2juo8jljkirra4jtsfi2ro1
+  logLevel: All
+  uaProdMode: 0
+  shipmentMapPrefix: 'http://traker.akwa.io/map/shipmentroute/'
+  exportsFolderName: exports
+  iotEndpoint: 'a1wni4oqohwzaw.iot.us-east-1.amazonaws.com'
+  EMAIL_FROM_ADDRESS: 'dev@akwa.io'
+  defaultBeaconUUID: 'b9407f30-f5f8-466e-aff9-25556b57fe6d'
+  userpoolExternalId: 9c5e5bca-cfef-40c6-8f18-575692dcab41
+  kontaktManagerId: 504f7e76-3a1c-45f6-b5bc-b831dbb862ca
+  kontaktPlaceId: 883673ab-96bc-4e26-9cb4-d24fce1409d5
+  kontaktBaseUrl: 'https://api.kontakt.io'
+  projectName: core
+  kontaktLocationEngineUrl: 'ovs.kontakt.io'
+  googleGeocodeApiUrl: 'http://maps.googleapis.com:80/maps/api/geocode/json'
+  adminGroupName: 'AkAdmin'
+  sendNotificationLambdaName: 'ak-emails-sendNotification'
+  kontaktApiKey: MdahnpkIOBvCxfOOmCKHtCdTaEXaqcSx
+  apiBaseUrl: https://slsapi.akwa.io
+  iotTopic: ak-trackPoints
+  invokedSyncLambdaName: ak-jobs-invokedSync
+  exporterLambda:  'ak-export-export'
+  blTrackingStream: 'TrackingBLStream'
+  allowedAppNames: 'salesRep,gateway,carrier'
+  companyName: Akwa
+  footerText: Copyright © 2017 AKWA IoT LLC. All rights reserved.
+  salutationText: Akwa Team
+  companyLogo: https://traker.akwa.io/assets/nicbit.png
+  defaultBeaconMajor: 2
+
+api:
+  defaultRecordsPerPage: 20
+  SLS_DEBUG: '*'
+  dbURI: "mongodb://172.31.59.255:27017/ak-intulio-dev"
+  trackingDbURI : 'mongodb://172.31.59.255:27017/ak-coretrack-qc'
+  iamURI: "https://iam.amazonaws.com/"
+  kms: 0
+  cacheHost: "reversegeocache.ouahzc.cfg.use1.cache.amazonaws.com"
+  cachePort: 11211
+  accountNo: '012179919676'
+  accessKeyId: <Your AWS Access key>
+  secretAccessKey: <Your Secret AWS access key>
+  region: 'us-east-1'
+  stage: api
+  batteryfetchCount: 4
+  syncCount: 500
+  trackingLambda: 'ak-track-processTracking'
+  shipmentStatusLambda:  'ak-track-processShipmentStatus'
+  productTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-productTracking'
+  shipmentTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-shipmentTracking'
+  userTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-userTracking'
+  deviceTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-deviceTracking'
+  SENDGRID_API_KEY: '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'
+  cloudWatchTrackingLatencyMatric: 'tracking_qc_data_debug'
+  adminurl: 'http://traker.akwa.io'
+  enableAutoShipped: 1
+  enableAutoDelivered: 1
+  nearLocationDistanceMeters: 5000
+  docBucket: akwa-documents-qc
+  cognitoUserpoolId: us-east-1_zI0af0OBy
+  cognitoClientId: 2po2juo8jljkirra4jtsfi2ro1
+  logLevel: All
+  uaProdMode: 0
+  shipmentMapPrefix: 'http://traker.akwa.io/map/shipmentroute/'
+  exportsFolderName: exports
+  iotEndpoint: 'a1wni4oqohwzaw.iot.us-east-1.amazonaws.com'
+  EMAIL_FROM_ADDRESS: 'dev@akwa.io'
+  defaultBeaconUUID: 'b9407f30-f5f8-466e-aff9-25556b57fe6d'
+  userpoolExternalId: 9c5e5bca-cfef-40c6-8f18-575692dcab41
+  kontaktManagerId: 504f7e76-3a1c-45f6-b5bc-b831dbb862ca
+  kontaktPlaceId: 883673ab-96bc-4e26-9cb4-d24fce1409d5
+  kontaktBaseUrl: 'https://api.kontakt.io'
+  projectName: core
+  kontaktLocationEngineUrl: 'ovs.kontakt.io'
+  googleGeocodeApiUrl: 'http://maps.googleapis.com:80/maps/api/geocode/json'
+  adminGroupName: 'AkAdmin'
+  sendNotificationLambdaName: 'ak-emails-sendNotification'
+  kontaktApiKey: MdahnpkIOBvCxfOOmCKHtCdTaEXaqcSx
+  apiBaseUrl: https://slsapi.akwa.io
+  iotTopic: ak-trackPoints
+  invokedSyncLambdaName: ak-jobs-invokedSync
+  exporterLambda:  'ak-export-export'
+  blTrackingStream: 'TrackingBLStream'
+  allowedAppNames: 'salesRep,gateway,carrier'
+  companyName: Akwa
+  footerText: Copyright © 2017 AKWA IoT LLC. All rights reserved.
+  salutationText: Akwa Team
+  companyLogo: https://traker.akwa.io/assets/nicbit.png
+  defaultBeaconMajor: 2
+
+ng:
+  defaultRecordsPerPage: 20
+  SLS_DEBUG: '*'
+  dbURI: "mongodb://172.31.59.255:27017/ak-intulio-dev"
+  trackingDbURI : 'mongodb://172.31.59.255:27017/ak-coretrack-qc'
+  iamURI: "https://iam.amazonaws.com/"
+  kms: 0
+  cacheHost: "reversegeocache.ouahzc.cfg.use1.cache.amazonaws.com"
+  cachePort: 11211
+  accountNo: '012179919676'
+  accessKeyId: <Your AWS Access key>
+  secretAccessKey: <Your Secret AWS access key>
+  region: 'us-east-1'
+  stage: ng
+  batteryfetchCount: 4
+  syncCount: 500
+  trackingLambda: 'ak-track-processTracking'
+  shipmentStatusLambda:  'ak-track-processShipmentStatus'
+  productTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-productTracking'
+  shipmentTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-shipmentTracking'
+  userTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-userTracking'
+  deviceTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-deviceTracking'
+  SENDGRID_API_KEY: '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'
+  cloudWatchTrackingLatencyMatric: 'tracking_qc_data_debug'
+  adminurl: 'http://traker.akwa.io'
+  enableAutoShipped: 1
+  enableAutoDelivered: 1
+  nearLocationDistanceMeters: 5000
+  docBucket: akwa-documents-qc
+  cognitoUserpoolId: us-east-1_zI0af0OBy
+  cognitoClientId: 2po2juo8jljkirra4jtsfi2ro1
+  logLevel: All
+  uaProdMode: 0
+  shipmentMapPrefix: 'http://traker.akwa.io/map/shipmentroute/'
+  exportsFolderName: exports
+  iotEndpoint: 'a1wni4oqohwzaw.iot.us-east-1.amazonaws.com'
+  EMAIL_FROM_ADDRESS: 'dev@akwa.io'
+  defaultBeaconUUID: 'b9407f30-f5f8-466e-aff9-25556b57fe6d'
+  userpoolExternalId: 9c5e5bca-cfef-40c6-8f18-575692dcab41
+  kontaktManagerId: 504f7e76-3a1c-45f6-b5bc-b831dbb862ca
+  kontaktPlaceId: 883673ab-96bc-4e26-9cb4-d24fce1409d5
+  kontaktBaseUrl: 'https://api.kontakt.io'
+  projectName: core
+  kontaktLocationEngineUrl: 'ovs.kontakt.io'
+  googleGeocodeApiUrl: 'http://maps.googleapis.com:80/maps/api/geocode/json'
+  adminGroupName: 'AkAdmin'
+  sendNotificationLambdaName: 'ak-emails-sendNotification'
+  kontaktApiKey: MdahnpkIOBvCxfOOmCKHtCdTaEXaqcSx
+  apiBaseUrl: https://slsapi.akwa.io
+  iotTopic: ak-trackPoints
+  invokedSyncLambdaName: ak-jobs-invokedSync
+  exporterLambda:  'ak-export-export'
+  blTrackingStream: 'TrackingBLStream'
+  allowedAppNames: 'salesRep,gateway,carrier'
+  companyName: Akwa
+  footerText: Copyright © 2017 AKWA IoT LLC. All rights reserved.
+  salutationText: Akwa Team
+  companyLogo: https://traker.akwa.io/assets/nicbit.png
+  defaultBeaconMajor: 2
+
+qc:
+  defaultRecordsPerPage: 20
+  SLS_DEBUG: '*'
+  dbURI: "mongodb://172.31.59.255:27017/ak-intulio-qc"
+  trackingDbURI : 'mongodb://172.31.59.255:27017/ak-coretrack-qc'
+  iamURI: "https://iam.amazonaws.com/"
+  kms: 0
+  cacheHost: "reversegeocache.ouahzc.cfg.use1.cache.amazonaws.com"
+  cachePort: 11211
+  accountNo: '012179919676'
+  accessKeyId: <Your AWS Access key>
+  secretAccessKey: <Your Secret AWS access key>
+  region: 'us-east-1'
+  stage: qc
+  batteryfetchCount: 4
+  syncCount: 500
+  trackingLambda: 'ak-track-processTracking'
+  shipmentStatusLambda:  'ak-track-processShipmentStatus'
+  productTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-productTracking'
+  shipmentTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-shipmentTracking'
+  userTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-userTracking'
+  deviceTrackingIotTopic: 'ak-012179919676-us-east-1_zI0af0OBy-deviceTracking'
+  SENDGRID_API_KEY: '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'
+  cloudWatchTrackingLatencyMatric: 'tracking_qc_data_debug'
+  adminurl: 'http://traker.akwa.io'
+  enableAutoShipped: 1
+  enableAutoDelivered: 1
+  nearLocationDistanceMeters: 5000
+  docBucket: akwa-documents-qc
+  cognitoUserpoolId: us-east-1_zI0af0OBy
+  cognitoClientId: 2po2juo8jljkirra4jtsfi2ro1
+  logLevel: All
+  uaProdMode: 1
+  shipmentMapPrefix: 'http://traker.akwa.io/map/shipmentroute/'
+  exportsFolderName: exports
+  iotEndpoint: 'a1wni4oqohwzaw.iot.us-east-1.amazonaws.com'
+  EMAIL_FROM_ADDRESS: 'dev@akwa.io'
+  defaultBeaconUUID: 'b9407f30-f5f8-466e-aff9-25556b57fe6d'
+  userpoolExternalId: 9c5e5bca-cfef-40c6-8f18-575692dcab41
+  kontaktManagerId: 504f7e76-3a1c-45f6-b5bc-b831dbb862ca
+  kontaktPlaceId: 883673ab-96bc-4e26-9cb4-d24fce1409d5
+  kontaktBaseUrl: 'https://api.kontakt.io'
+  projectName: core
+  kontaktLocationEngineUrl: 'ovs.kontakt.io'
+  googleGeocodeApiUrl: 'http://maps.googleapis.com:80/maps/api/geocode/json'
+  adminGroupName: 'AkAdmin'
+  sendNotificationLambdaName: 'ak-emails-sendNotification'
+  kontaktApiKey: MdahnpkIOBvCxfOOmCKHtCdTaEXaqcSx
+  apiBaseUrl: https://slsapi.akwa.io
+  iotTopic: ak-trackPoints
+  invokedSyncLambdaName: ak-jobs-invokedSync
+  exporterLambda:  'ak-export-export'
+  blTrackingStream: 'TrackingBLStream'
+  allowedAppNames: 'salesRep,gateway,carrier'
+  companyName: Akwa
+  footerText: Copyright © 2017 AKWA IoT LLC. All rights reserved.
+  salutationText: Akwa Team
+  companyLogo: https://traker.akwa.io/assets/nicbit.png
+  defaultBeaconMajor: 2

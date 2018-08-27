@@ -1,0 +1,7 @@
+handler: handlers/tracking.trackingApi
+name: ${self:custom.constants.defaults.prefix}${self:service}-trackingApi
+events:
+  - http:
+      path: /batch
+      method: post
+      cors: true

@@ -1,0 +1,11 @@
+handler: handlers/gateway.getGateways
+name: ${self:custom.constants.defaults.prefix}${self:service}-gateways-get
+events:
+  - http:
+      path: /gateways
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

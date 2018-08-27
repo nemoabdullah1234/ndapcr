@@ -1,0 +1,11 @@
+handler: handlers/movement.detail
+name: ${self:custom.constants.defaults.prefix}${self:service}-detail
+events:
+  - http:
+      path: /details
+      method: get
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

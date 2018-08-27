@@ -1,0 +1,7 @@
+handler: handlers/exports.handleRequest
+name: ${self:custom.constants.defaults.prefix}${self:service}-handle-request
+events:
+  - http:
+      path: /{exportFormat}/
+      method: post
+      cors: true

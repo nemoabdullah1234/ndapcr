@@ -1,0 +1,223 @@
+{
+  "restApi": {
+    "dashboard": {
+      "Dashboard": {
+        "id": "k4157ccczg",
+        "resource": "*"
+      }
+    },
+    "master": {
+      "Attribute": {
+        "id": "60b3f21jqj",
+        "resource": "*"
+      },
+      "Category": {
+        "id": "goorsz24hj",
+        "resource": "*"
+      },
+      "Products": {
+        "id": "zvviso5fyi",
+        "resource": "*"
+      },
+      "Collections": {
+        "id": "pgd0dnust8",
+        "resource": "*"
+      },
+      "Locations": {
+        "id": "pj2j626sr6",
+        "resource": "*"
+      },
+      "Tags": {
+        "id": "oi7grt3mlh",
+        "resource": "*"
+      },
+      "Beacons": {
+        "id": "c7ypbd43j5",
+        "resource": "beacons/*"
+      },
+      "Gateways": {
+        "id": "c7ypbd43j5",
+        "resource": "gateways/*"
+      },
+      "Apps": {
+        "id": "c7ypbd43j5",
+        "resource": "devices/*"
+      },
+      "Temperature Tags": {
+        "id": "c7ypbd43j5",
+        "resource": "temptags/*"
+      }
+    },
+    "tracking": {
+      "Orders": {
+        "id": "rao8esptwa",
+        "resource": "*"
+      },
+      "Shipments": {
+        "id": "thn6j8jxeh",
+        "resource": "*"
+      }
+    },
+    "admin": {
+      "Permissions": {
+        "id": "czltk36rf6",
+        "resource": "*"
+      },
+      "Configuration": {
+        "id": "g5bynx7471",
+        "resource": "*"
+      },
+      "Audit Trail": {
+        "id": "87emf890wa",
+        "resource": "*"
+      }
+    },
+    "reports": {
+      "Accepted/Discarded Data Points": {
+        "id": "rsb5gim459",
+        "httpVerb": ["GET"],
+        "resource": "pointstatus-tracking/*"
+      },
+      "App Status": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "app-status/*"
+      },
+      "Carrier-Wise Delayed Deliveries": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "carrier-wise-delayed-shipments/*"
+      },
+      "Device Locator": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "device-locator/*"
+      },
+      "Location-Wise Internal V/S External Delivered Shipments": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "internal-external-shipments/*"
+      },
+      "Location To Zones Mapping": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "location-zone-mapping/*"
+      },
+      "Mobile logs": {
+        "id": "rsb5gim459",
+        "httpVerb": ["GET"],
+        "resource": "mobilelogs/*"
+      },
+      "Most Used Products Per Surgeon": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "most-used-products-per-surgeon/*"
+      },
+      "Orders Per City": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "orders-by-city/*"
+      },
+      "Orders By Surgery Type": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "orders-by-surgery/*"
+      },
+      "Open Orders - Surgery Date Passed": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "orders-not-closed/*"
+      },
+      "Orders Per Hospital": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "orders-per-hospital/*"
+      },
+      "Orders Per Surgeon": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "orders-per-surgeon/*"
+      },
+      "Orders With Unshipped Products": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "orders-with-unshipped-products/*"
+      },
+      "Partial Shipments": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "partial-shipments/*"
+      },
+      "Product Locator": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "product-locator/*"
+      },
+      "Products Ready To Dispatch": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "products-ready-to-dispatch/*"
+      },
+      "Product Sensor Mapping": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "product-thing-mapping/*"
+      },
+      "Raw Data Points": {
+        "id": "rsb5gim459",
+        "httpVerb": ["GET"],
+        "resource": "rawsensors-tracking/*"
+      },
+      "Sales Representative-Wise Product Orders": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "salesrep-wise-product-order/*"
+      },
+      "Sensor Connection Status": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "sensor-connection-status/*"
+      },
+      "Sensor Locator": {
+        "id": "p90cbqug0b",
+        "httpVerb": ["GET"],
+        "resource": "sensor-locator/*"
+      },
+      "Total Time Taken For Shipment Deliveries": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "shipment-delivery-time/*"
+      },
+      "Shipments Due": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "shipment-due/*"
+      },
+      "Shipment Hard Delivered By Web Admin": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "shipment-hard-delivered/*"
+      },
+      "Shipments In Jeopardy": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "shipments-in-jeopardy/*"
+      },
+      "Stationary Shipments": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "stationary-shipments/*"
+      },
+      "Undelivered Products": {
+        "id": "p90cbqwg0b",
+        "httpVerb": ["GET"],
+        "resource": "undelivered-products/*"
+      },
+      "Login History": {
+        "id": "p90cbqwg4b",
+        "httpVerb": ["GET"],
+        "resource": "login-history/*"
+      }
+    }
+  }
+}

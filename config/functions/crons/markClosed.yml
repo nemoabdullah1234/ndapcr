@@ -1,0 +1,4 @@
+handler: handlers/cron.markClosed
+name: ${self:custom.constants.defaults.prefix}${self:service}-markClosed
+events:
+  - schedule: rate(1 hour)

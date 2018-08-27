@@ -1,0 +1,11 @@
+handler: handlers/things.getThingById
+name: ${self:custom.constants.defaults.prefix}${self:service}-beacons-getById
+events:
+  - http:
+      path: /beacons/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

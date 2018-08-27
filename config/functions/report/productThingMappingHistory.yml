@@ -1,0 +1,11 @@
+handler: handlers/report.productThingMappingHistory
+name: ${self:custom.constants.defaults.prefix}${self:service}-productThingMappingHistory
+events:
+  - http:
+      path: /product-thing-mapping/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,12 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["import", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true, "printWidth": 100 }],
+    "jsx-a11y/href-no-hash": "off",
+    "new-cap": "off",
+    "class-methods-use-this": "off",
+    "func-names": "off",
+    "no-plusplus": "off"
+  }
+}

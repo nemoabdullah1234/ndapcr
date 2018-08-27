@@ -1,0 +1,11 @@
+handler: handlers/order.searchOrdersAndProductsForMobile
+name: ${self:custom.constants.defaults.prefix}${self:service}-searchOrdersAndProducts
+events:
+  - http:
+      path: /searchOrderAndProducts
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

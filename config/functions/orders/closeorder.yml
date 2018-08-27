@@ -1,0 +1,13 @@
+handler: handlers/order.closeOrder
+name: ${self:custom.constants.defaults.prefix}${self:service}-close
+events:
+  - http:
+      path: /close/{id}
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization
+         
+         

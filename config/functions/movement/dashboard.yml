@@ -1,0 +1,11 @@
+handler: handlers/movement.dashboard
+name: ${self:custom.constants.defaults.prefix}${self:service}-dashboard
+events:
+  - http:
+      path: /dashboard
+      method: get
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

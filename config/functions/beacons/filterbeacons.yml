@@ -1,0 +1,11 @@
+handler: handlers/things.getFilteredThings
+name: ${self:custom.constants.defaults.prefix}${self:service}-beacon-filter
+events:
+  - http:
+      path: /beacons/filter
+      method: post
+      cors: true
+      #authorizer:
+         #name: customauthorizer
+         #resultTtlInSeconds: 0
+         #identitySource: method.request.header.Authorization

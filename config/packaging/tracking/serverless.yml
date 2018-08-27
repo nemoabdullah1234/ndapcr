@@ -1,0 +1,70 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: track # NOTE: update this with your service name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+custom: 
+  paths:
+    configPath: "./../../../config/config"
+    functionPath: "./../../../config/functions"
+
+  constants: ${file(${self:custom.paths.configPath}/constants.serverless.yml)}
+  authrizerArn: arn:aws:lambda:${self:provider.region}:${self:provider.environment.accountNo}:function:${self:custom.constants.authrizer}:${self:provider.stage}
+  
+provider:
+  # fixed - cannot change
+  name: aws
+  # fixed - cannot change
+  runtime: nodejs6.10
+  # default role for most of the functions for specific functions use role in function
+  role: ${self:custom.constants.defaults.role}
+  # default function versoning is on required for serverless-alias plugin
+  versionFunctions: ${self:custom.constants.defaults.versionFunctions}
+  stage: ${opt:stage, self:custom.constants.defaults.stage}
+  region: ${self:custom.constants.defaults.region}
+  memorySize: ${self:custom.constants.defaults.memorySize}
+  timeout: ${self:custom.constants.defaults.timeout}
+  deploymentBucket: ${self:custom.constants.defaults.deploymentBucketName}
+
+  vpc: ${file(${self:custom.paths.configPath}/vpc.serverless.yml)}
+  environment: ${file(${self:custom.paths.configPath}/environment.serverless.yml):${self:provider.alias}}
+
+  # you can add packaging information here
+package:
+  include: ${file(${self:custom.paths.configPath}/includes.serverless.yml)}
+  exclude: ${file(${self:custom.paths.configPath}/excludes.serverless.yml)}
+
+plugins:
+  - serverless-offline
+  - serverless-aws-alias
+
+functions:
+
+  #customauthorizer:
+  #  handler: handlers/iam.customauthorizer
+
+  # tracking
+  trackingApi: ${file(${self:custom.paths.functionPath}/tracking/trackingApi.yml)}
+  trackingKinesis: ${file(${self:custom.paths.functionPath}/tracking/trackkinesis.yml)}
+  trackingProcess: ${file(${self:custom.paths.functionPath}/tracking/tracking.yml)}
+  trackingKinesisShipment: ${file(${self:custom.paths.functionPath}/tracking/trackkinesisshipments.yml)}
+  trackingShipmentStatus: ${file(${self:custom.paths.functionPath}/tracking/trackshipmentstatus.yml)}
+  getMobileLogs: ${file(${self:custom.paths.functionPath}/tracking/getmobilelogs.yml)}
+  
+  # kontakt
+  subscribeWebhook: ${file(${self:custom.paths.functionPath}/kontakt/subscribe.yml)}
+  webhookRecieveData: ${file(${self:custom.paths.functionPath}/kontakt/webhook.yml)}
+  # webhookResubscribe: ${file(${self:custom.paths.functionPath}/kontakt/resubscribe.yml)}

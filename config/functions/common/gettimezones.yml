@@ -1,0 +1,7 @@
+handler: handlers/timezone.getTimezones
+name: ${self:custom.constants.defaults.prefix}${self:service}-get-timezones
+events:
+  - http:
+      path: timezones
+      method: get
+      cors: true

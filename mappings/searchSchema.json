@@ -1,0 +1,41 @@
+{
+	"attributesSchema": {
+		"mappings": {
+			"attributes": {
+				"properties": {
+					"id": {
+						"type": "keyword"
+					},
+					"code": {
+						"type": "keyword"
+					},
+					"name": {
+						"type": "keyword"
+					},
+					"status": {
+						"type": "byte"
+					},
+					"updatedBy": {
+						"type": "keyword"
+					},
+					"updatedOn": {
+						"type": "date"
+					},
+					"client": {
+						"properties": {
+							"clientid": {
+								"type": "keyword"
+							},
+							"project": {
+								"type": "keyword"
+							}
+						}
+					},
+					"tags": {
+						"type": "nested"
+					}
+				}
+			}
+		}
+	}
+}

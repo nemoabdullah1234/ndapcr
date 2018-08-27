@@ -1,0 +1,11 @@
+handler: handlers/location/zone.getZoneById
+name: ${self:custom.constants.defaults.prefix}${self:service}-getByIdZone
+events:
+  - http:
+      path: /zones/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

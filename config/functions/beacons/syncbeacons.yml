@@ -1,0 +1,11 @@
+handler: handlers/thingssync.thingsSync
+name: ${self:custom.constants.defaults.prefix}${self:service}-beacon-sync
+events:
+  - http:
+      path: beacons/sync
+      method: get
+      cors: true
+      # authorizer:
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

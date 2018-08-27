@@ -1,0 +1,22 @@
+{
+  "entity":"appStatus",
+  "format":"csv",
+  "queryParams": {
+    "offset":"0",
+    "limit":"100",
+    "sort":"-lastTracked"
+  },
+  "pathParams":{},
+  "client":{
+    "clientId":"012179919676",
+    "projectId":"us-east-1_zI0af0OBy"
+  },
+  "requestedBy":{
+    "uuid":"f05241d5-95c0-4c74-9264-10f52f3e3cf5",
+    "firstName":"puran",
+    "lastName":"akwa",
+    "email":"puran@akwa.io",
+    "timezone":"Asia/Kolkata",
+    "preferredRole":"role-core-akadmin"
+  }
+}

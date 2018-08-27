@@ -1,0 +1,11 @@
+handler: handlers/report.salesrepWiseProductOrder
+name: ${self:custom.constants.defaults.prefix}${self:service}-salesrepWiseProductOrder
+events:
+  - http:
+      path: /salesrep-wise-product-order
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

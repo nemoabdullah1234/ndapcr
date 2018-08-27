@@ -1,0 +1,4 @@
+handler: handlers/cron.disassociateNamedUsersFromOldChannels
+name: ${self:custom.constants.defaults.prefix}${self:service}-disassociateNamedUsersFromOldChannels
+events:
+  - schedule: rate(1 day)

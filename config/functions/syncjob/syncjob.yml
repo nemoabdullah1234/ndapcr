@@ -1,0 +1,12 @@
+handler: handlers/syncjob.scheduleSync
+timeout: 120
+name: ${self:custom.constants.defaults.prefix}${self:service}-sync
+events:
+  - http:
+      path: /sync
+      method: post
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

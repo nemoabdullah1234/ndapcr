@@ -1,0 +1,10 @@
+handler: handlers/akng/locations.updateLocation
+events:
+  - http:
+      path: /{id}
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

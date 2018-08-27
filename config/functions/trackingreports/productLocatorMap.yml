@@ -1,0 +1,11 @@
+handler: handlers/trackingreports.productLocatorMap
+name: ${self:custom.constants.defaults.prefix}${self:service}-productLocatorMap
+events:
+  - http:
+      path: /product-locator-map
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

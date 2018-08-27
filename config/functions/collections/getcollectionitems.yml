@@ -1,0 +1,11 @@
+handler: handlers/collections.getCollectionItems
+name: ${self:custom.constants.defaults.prefix}${self:service}-items-get
+events:
+  - http:
+      path: /items/{code}
+      method: get
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

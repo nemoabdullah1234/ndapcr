@@ -1,0 +1,11 @@
+handler: handlers/shipment.deliverShipment
+name: ${self:custom.constants.defaults.prefix}${self:service}-deliver
+events:
+  - http:
+      path: /deliver/{id}
+      method: put
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,12 @@
+handler: handlers/trackingreports.userLocatorHistoryMap
+name: ${self:custom.constants.defaults.prefix}${self:service}-userLocatorHistoryMap
+timeout: 30
+events:
+  - http:
+      path: /user-locator-history-map/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

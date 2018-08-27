@@ -1,0 +1,11 @@
+handler: handlers/report.casesWithUnshippedProducts
+name: ${self:custom.constants.defaults.prefix}${self:service}-casesWithUnshippedProducts
+events:
+  - http:
+      path: /orders-with-unshipped-products
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

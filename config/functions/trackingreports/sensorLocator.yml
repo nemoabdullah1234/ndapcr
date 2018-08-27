@@ -1,0 +1,12 @@
+handler: handlers/trackingreports.sensorLocator
+name: ${self:custom.constants.defaults.prefix}${self:service}-sensorLocator
+timeout: 30
+events:
+  - http:
+      path: /sensor-locator
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

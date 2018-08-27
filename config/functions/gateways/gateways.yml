@@ -1,0 +1,37 @@
+handler: routing/things.routeGateways
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeGateways
+events:
+  - http:
+      path: /gateways/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  - http:
+      path: /gateways
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  
+  - http:
+      path: /gateways/{id}
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+
+  - http:
+      path: /gateways
+      method: post
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

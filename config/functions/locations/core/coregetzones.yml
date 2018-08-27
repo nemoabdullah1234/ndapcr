@@ -1,0 +1,11 @@
+handler: handlers/location/zone.getZones
+name: ${self:custom.constants.defaults.prefix}${self:service}-getZone
+events:
+  - http:
+      path: /zones
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

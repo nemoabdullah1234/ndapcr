@@ -1,0 +1,5 @@
+handler: handlers/cron.sendDelayedShipmentNotification
+name: ${self:custom.constants.defaults.prefix}${self:service}-sendDelayedShipmentNotification
+timeout: 300
+events:
+  - schedule: rate(1 hour)

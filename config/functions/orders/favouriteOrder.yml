@@ -1,0 +1,11 @@
+handler: handlers/order.favouriteOrder
+name: ${self:custom.constants.defaults.prefix}${self:service}-favourite
+events:
+  - http:
+      path: /salesrep/favourite
+      method: put
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

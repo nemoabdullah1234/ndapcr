@@ -1,0 +1,11 @@
+handler: handlers/gatewaysync.gatewaySync
+name: ${self:custom.constants.defaults.prefix}${self:service}-gateways-sync
+events:
+  - http:
+      path: /gateways/sync
+      method: get
+      cors: true
+      # authorizer:
+      #    name: customauthorizer
+      #    resultTtlInSeconds: 0
+      #    identitySource: method.request.header.Authorization

@@ -1,0 +1,3 @@
+handler: handlers/syncjob.invokedSync
+timeout: 300
+name: ${self:custom.constants.defaults.prefix}${self:service}-invokedSync

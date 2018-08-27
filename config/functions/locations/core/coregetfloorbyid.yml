@@ -1,0 +1,11 @@
+handler: handlers/location/floor.getFloorById
+name: ${self:custom.constants.defaults.prefix}${self:service}-getByIdFloor
+events:
+  - http:
+      path: /floors/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

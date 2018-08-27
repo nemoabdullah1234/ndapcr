@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>:: Mailer :: </title>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            /*background-color: #282828;*/
+            margin: 0;
+        }
+
+        .email-wrapper {
+            background-color: #fff;
+            max-width: 680px;
+            margin: auto;
+        }
+
+        .main-wrapper {
+            background-color: #282828;
+        }
+
+        .logo-img-cover {
+            background: #3d3d3d;
+            padding: 10px;
+        }
+
+        .logo-img-cover .logo {
+            margin: auto;
+            display: block;
+        }
+
+        .content-wrapper {
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 5%;
+        }
+
+        .salutation {
+            color: #2c2c2c;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .txt {
+            color: #2c2c2c;
+            font-size: 14px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            margin-top: 5%;
+        }
+
+        ul li {
+            color: #9e9e9e;
+            float: left;
+            font-size: 14px;
+        }
+
+        ul li:first-child {
+            width: 100px;
+        }
+
+        ul li:last-child {
+            width: calc(100% - 100px);
+        }
+
+        ul li:last-child a {
+            color: #008bf3;
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .reset {
+            background: #008bf3;
+            border-radius: 3px;
+            color: #fff;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 3%;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .thanks {
+            color: #2c2c2c;
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        .footer {
+            border-top: 1px solid #b5c4ce;
+            color: #5b5b5b;
+            font-size: 12px;
+            padding: 22px 0px;
+            text-align: center;
+            background-color: #d7e2e9;
+        }
+
+        .tag-line {
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="email-wrapper">
+            <div class="logo-img-cover">
+                <img src="<%=companyLogo%>" alt="logo" class="logo" width="200px" height="70px" />
+            </div>
+            <div class="content-wrapper">
+                <span class="salutation">
+                    <%=name%>,</span>
+                <p class="para txt">Please find below the credentials to login into mobile App.</p>
+                <p>User Id :
+                    <a href="#" target="_blank" style="color:#008bf3;">
+                        <%=email%>
+                    </a>
+                </p>
+                <p>Password :
+                    <%=password%>
+                </p>
+                <div class="clearfix"></div>
+                <p class="thanks">Thanks,
+                    <span>
+                        <%= salutationText %>
+                    </span>
+                </p>
+            </div>
+            <footer class="footer">
+                <p class="tag-line">
+                    <%=footerText%>
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

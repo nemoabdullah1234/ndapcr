@@ -1,0 +1,10 @@
+handler: handlers/tracking.processTracking
+name: ${self:custom.constants.defaults.prefix}${self:service}-processTracking
+description: Function to process tracking at BL end
+timeout: 60
+#events:
+#  - stream:
+#      arn: arn:aws:kinesis:us-east-1:012179919676:stream/TrackingBLStream
+#      batchSize: 100
+#      startingPosition: LATEST
+#      enabled: true

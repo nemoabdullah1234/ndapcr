@@ -1,0 +1,13 @@
+{
+  "notificationId": "5a0bebb1a2495100017e915d",
+  "client": {
+		"clientId" : "012179919676",
+		"projectId" : "us-east-1_zI0af0OBy"
+  },
+  "currentUser": {
+		"uuid" : "",
+		"firstName" : "System",
+		"lastName" : "Operation",
+		"email" : ""
+	}
+}

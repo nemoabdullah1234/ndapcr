@@ -1,0 +1,12 @@
+handler: handlers/trackingreports.pointStatusTracking
+name: ${self:custom.constants.defaults.prefix}${self:service}-pointStatusTracking
+timeout: 30
+events:
+  - http:
+      path: /pointstatus-tracking
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

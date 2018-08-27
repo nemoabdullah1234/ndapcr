@@ -1,0 +1,5 @@
+handler: handlers/notifications.sendNotification
+timeout: 120
+name: ${self:custom.constants.defaults.prefix}${self:service}-sendNotification
+# events:
+  # - sns: ${self:provider.environment.notificationSnsArn}

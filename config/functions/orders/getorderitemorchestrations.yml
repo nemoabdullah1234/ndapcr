@@ -1,0 +1,11 @@
+handler: handlers/order.getOrderItemOrchestrations
+name: ${self:custom.constants.defaults.prefix}${self:service}-getItemOrchestrations
+events:
+  - http:
+      path: /itemorchestrations/{orderid}/{id}
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

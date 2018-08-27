@@ -1,0 +1,46 @@
+{
+  "dev": {
+    "salesRep": {
+      "key": "-5ofuY-hQ5SOfzCxK4TO3Q",
+      "secret": "xslzeo2ySZqnLGC5yldCsQ",
+      "master": "xC1fFZgaSIisN-Tj2G5X4w"
+    },
+    "carrier": {
+      "key": "8L6XUoKCQ1a7EOEtvLrZYw",
+      "secret": "VTu1I2iyTh2boEq7MV3gfw",
+      "master": "wKdmUletS3SAzUsEuznCCw"
+    },
+    "gateway": {
+      "key": "P7uDN1QEQla9uVv8fvKp6A",
+      "secret": "cT8lOYy1SIyj3L-cwgECzQ",
+      "master": "OtKMgfvaRumKLrNxnRBytw"
+    },
+    "emptrak": {
+      "key": "k0Pxto6NSMmw0wqgRu4KOA",
+      "secret": "KtW1qfvCSAK84TngNs7N7A",
+      "master": "dGk2qoarTtWNLQAswwQbtA"
+    }
+  },
+  "prod": {
+    "salesRep": {
+      "key": "en1byQRRS_6PORP1zlI7Kg",
+      "secret": "73dJoKRNRom-8IMYfZmFgg",
+      "master": "tSQZMy7KTkKP__cEpZ0qMw"
+    },
+    "carrier": {
+      "key": "x_NN_7IqTtynLajyjQaJiw",
+      "secret": "9-lQcb89QQSyHLwYCuriYw",
+      "master": "kx1hs0yiSAyju9xZzBDqng"
+    },
+    "gateway": {
+      "key": "kd71n29fR-Kz81p6_8A5ew",
+      "secret": "BIPWdiPmQeiKm3d1smaqUQ",
+      "master": "jSSTXxXjT_a9JMHIrfMSmA"
+    },
+    "emptrak": {
+      "key": "jJD69OnPT-KmeBGCiF9LNQ",
+      "secret": "6oeF_PGZQwyz_9qCLwMC1Q",
+      "master": "Ry-K32OzScCcJzBPlkPF_Q"
+    }
+  }
+}

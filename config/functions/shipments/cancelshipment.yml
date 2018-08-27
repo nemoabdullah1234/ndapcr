@@ -1,0 +1,11 @@
+handler: handlers/shipment.cancelShipment
+name: ${self:custom.constants.defaults.prefix}${self:service}-cancel
+events:
+  - http:
+      path: /{id}
+      method: delete
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

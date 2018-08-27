@@ -1,0 +1,12 @@
+handler: handlers/report.appStatus
+name: ${self:custom.constants.defaults.prefix}${self:service}-appStatus
+timeout: 30
+events:
+  - http:
+      path: /app-status
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,46 @@
+handler: routing/things.routeNfcTags
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeNfcTags
+events:
+  - http:
+      path: /nfctags/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  - http:
+      path: /nfctags
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  
+  - http:
+      path: /nfctags/{id}
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+
+  - http:
+      path: /nfctags
+      method: post
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+        
+  - http:
+      path: /nfctags/scanhistory/{productId}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,11 @@
+handler: handlers/shipment.getShipmentOrchestrations
+name: ${self:custom.constants.defaults.prefix}${self:service}-getOrchestrations
+events:
+  - http:
+      path: /orchestrations/{id}
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

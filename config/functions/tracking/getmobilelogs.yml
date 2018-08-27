@@ -1,0 +1,9 @@
+handler: handlers/tracking.getMobileLogs
+name: ${self:custom.constants.defaults.prefix}${self:service}-getMobileLogs
+description: Function to get mobile logs
+timeout: 60
+#events:
+#  - s3: 
+#      bucket: akwa-tracking-logs
+#      rules:
+#        - suffix: .csv

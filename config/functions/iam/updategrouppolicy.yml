@@ -1,0 +1,11 @@
+handler: handlers/iam.updateGroupPolicy
+name: ${self:custom.constants.defaults.prefix}${self:service}-group-policy-update
+events:
+  - http:
+      path: /group/policy
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

@@ -1,0 +1,10 @@
+handler: handlers/tracking.processShipmentStatus
+name: ${self:custom.constants.defaults.prefix}${self:service}-processShipmentStatus
+description: Function to process shipment shipped/delivered at BL end
+timeout: 18
+#events:
+#  - stream:
+#      arn: arn:aws:kinesis:us-east-1:012179919676:stream/TrackingBLStream
+#      batchSize: 100
+#      startingPosition: LATEST
+#      enabled: true

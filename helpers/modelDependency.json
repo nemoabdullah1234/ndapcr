@@ -1,0 +1,197 @@
+{
+  "dependencies": {
+    "attribute": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "product": ["attributes"],
+          "things": ["attributes"],
+          "kollection": ["items"],
+          "location": ["attributes"],
+          "orders": ["attributes"],
+          "shipments": [
+            "attributes",
+            "deliveryDetails.attributes",
+            "products.$.trackingDetails.currentLocation.address",
+            "trackingDetails.currentLocation.address"
+          ]
+        }
+      }
+    ],
+    "category": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "category": ["ancestors"],
+          "product": ["categories"],
+          "things": ["categories"],
+          "location": ["categories"]
+        }
+      }
+    ],
+    "product": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "product": ["ancestors"],
+          "orders": ["products"],
+          "shipments": ["products"]
+        }
+      },
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "productThingAssignment": ["product"],
+          "things": ["product"]
+        },
+        "type": "object"
+      }
+    ],
+    "things": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "product": ["things"],
+          "location": ["things"],
+          "users": ["things"]
+        }
+      },
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "productThingAssignment": ["thing"]
+        },
+        "type": "object"
+      }
+    ],
+    "location": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "location": ["ancestors"]
+        },
+        "keyMap": {
+          "attributes": "address"
+        }
+      },
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "product": ["location", "location.floor", "location.floor.zone"],
+          "shipments": [
+            "addresses.0.location",
+            "addresses.1.location",
+            "trackingDetails.currentLocation",
+            "products.$.trackingDetails.currentLocation"
+          ],
+          "orders": ["addresses.$.location"]
+        },
+        "type": "object",
+        "keyMap": {
+          "attributes": "address"
+        }
+      }
+    ],
+    "tags": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "shipments": ["tags"],
+          "orders": ["tags"],
+          "product": ["tags"],
+          "things": ["tags"],
+          "kollection": ["tags"],
+          "location": ["tags"],
+          "attribute": ["tags"],
+          "category": ["tags"]
+        }
+      }
+    ],
+    "orders": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "shipments": ["products.$.orderDetails"]
+        },
+        "type": "object"
+      }
+    ],
+    "users": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {
+          "orders": ["consumer"],
+          "shipments": ["carrierUser"]
+        },
+        "keyMap": {
+          "sub": "uuid",
+          "given_name": "firstName",
+          "family_name": "lastName",
+          "MobileNumber": "mobileNo"
+        },
+        "keysToMatch": {
+          "sub": "uuid"
+        },
+        "type": "object"
+      }
+    ],
+    "issues": [
+      {
+        "hook": "findOneAndUpdate",
+        "dependentModels": {}
+      }
+    ]
+  },
+  "interRelation": {
+    "product": {
+      "dependentModels": {
+        "things": {
+          "sourceKey": "things",
+          "EmbedInkey": "product",
+          "type": "object",
+          "keysToSave": ["id", "code", "name"],
+          "keyMap": {
+            "_id": "id"
+          }
+        }
+      }
+    },
+    "issues": {
+      "dependentModels": {
+        "shipments": {
+          "sourceKey": "shipment",
+          "EmbedInkey": "issue",
+          "type": "string",
+          "keyToEmbed": "_id"
+        }
+      }
+    },
+    "location": {
+      "dependentModels": {
+        "things": {
+          "sourceKey": "things",
+          "EmbedInkey": "location",
+          "type": "object",
+          "keysToSave": ["id", "code", "name"],
+          "keyMap": {
+            "_id": "id"
+          }
+        }
+      }
+    }
+  },
+  "collectionModelMapping": {
+    "orders": "order",
+    "shipments": "shipment",
+    "attribute": "attribute",
+    "category": "category",
+    "product": "product",
+    "location": "location",
+    "things": "things",
+    "kollection": "kollection",
+    "tags": "tags",
+    "issues": "issue",
+    "productThingAssignment": "productThingAssignment",
+    "users": "users"
+  }
+}

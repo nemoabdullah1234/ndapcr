@@ -1,0 +1,11 @@
+handler: handlers/device.unlink
+name: ${self:custom.constants.defaults.prefix}${self:service}-devices-unlink
+events:
+  - http:
+      path: /device/unlink
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

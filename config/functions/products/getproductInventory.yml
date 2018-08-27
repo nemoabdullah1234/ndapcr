@@ -1,0 +1,11 @@
+handler: handlers/products.getProductInventory
+name: ${self:custom.constants.defaults.prefix}${self:service}-getProductInventory
+events:
+  - http:
+      path: /inventory/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,11 @@
+handler: handlers/tracking.trackKinesisShipment
+name: ${self:custom.constants.defaults.prefix}${self:service}-trackKinesisShipment
+description: Function to call shipment tracking at BL end
+timeout: 18
+events:
+  - stream:
+      #arn: arn:aws:kinesis:${self:custom.constants.defaults.region}:012179919676:stream/TrackingBLStream
+      arn: arn:aws:kinesis:${self:custom.constants.defaults.region}:${self:provider.environment.accountNo}:stream/${self:provider.environment.blTrackingStream}
+      batchSize: 100
+      startingPosition: LATEST
+      enabled: true

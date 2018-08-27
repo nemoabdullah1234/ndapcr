@@ -1,0 +1,11 @@
+handler: handlers/device.saveDevice
+name: ${self:custom.constants.defaults.prefix}${self:service}-devices-save
+events:
+  - http:
+      path: /devices
+      method: post
+      cors: true
+      # authorizer:
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

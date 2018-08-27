@@ -1,0 +1,4 @@
+handler: handlers/cron.markDevicesInactive
+name: ${self:custom.constants.defaults.prefix}${self:service}-markDevicesInactive
+events:
+  - schedule: rate(1 day)

@@ -1,0 +1,11 @@
+handler: handlers/iam.createGroup
+name: ${self:custom.constants.defaults.prefix}${self:service}-group-save
+events:
+  - http:
+      path: /group
+      method: post
+      cors: true 
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

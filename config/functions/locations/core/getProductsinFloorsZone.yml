@@ -1,0 +1,11 @@
+handler: handlers/location/floor.getFloorsZoneProducts
+name: ${self:custom.constants.defaults.prefix}${self:service}-getProductsinFloorsZone
+events:
+  - http:
+      path: /floors/{id}/products
+      method: get
+      cors: true
+      # authorizer:
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

@@ -1,0 +1,11 @@
+handler: handlers/handler.getDependencyCount
+timeout: 30
+events:
+  - http:
+      path: dependencycount/{entity}/{id}
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif !important;
+      letter-spacing: 0px;
+    }
+
+    div {
+      color: #333333;
+      font-size: 9px;
+    }
+
+    p {
+      line-height: 15px;
+    }
+
+    .heading {
+      background-color: #434343;
+      width: 100%;
+    }
+
+    #logo img {
+      width: 150px;
+      display: inline-block;
+    }
+
+    .status {
+      padding-left: 100px;
+      font-weight: bold;
+    }
+
+    img.reviewer-sign {
+      width: auto;
+      height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div id="pageHeader-first" style="top:0px">Header on first page</div> -->
+  <!-- <div id="pageHeader-2" style="height:10px">Header on second page</div> -->
+  <!-- <div id="pageHeader" style="height:5px">Default header</div> -->
+  <div style=" width: auto;  border-width: 1px; border-color: #ccc; border-style: solid; margin:12px;">
+
+    <div class="heading">
+      <div id="logo" style="text-align:right;padding:10px;">
+        <img src='<%= logo %>'>
+      </div>
+
+      <div style="padding:10px;">
+        <span style="color:#efaf05;font-size:18px;">
+          <strong>Proof of Delivery</strong>
+        </span>
+        <!-- <span style="color:#fff;font-size:12px;font-weight:normal;display:inline-block;margin-left:260px;">Carrier Form -- Due Back Date <%= dueDate %></span> -->
+      </div>
+    </div>
+    <div style="padding:10px;">
+      <div style="width:100%">
+        <p style=" text-align: right;font-size:9px; margin:0;">
+          <strong>Phone: </strong>
+          <%= phone %>
+        </p>
+        <div>
+          <h3 style="font-size:15px">
+            <strong>Stryker - NY Metro</strong>
+          </h3>
+        </div>
+      </div>
+
+
+      <div>
+        <p>These implants are on loan from Stryker - NY Metro. All instruments have been inspected for defects and are not contaminated.
+          All trials and instruments must be returned. All unused implants must be returned in the original sealed packages.
+          All loaners are subject to inspection upon return.</p>
+      </div>
+
+      <div style="margin-top:10px;">
+        <table width="100%">
+          <tr>
+            <td style="font-size: 9px;vertical-align:top">
+              <strong>Ship To:</strong>
+            </td>
+
+            <td style="font-size: 9px;">
+              <%= shippingDetails_name %>
+                <br/>
+                <%= shippingDetails_address %>
+                  <br/>
+                  <%= shippingDetails_city %>
+                    <br/>
+                    <%= shippingDetails_state %>
+                      <br/>
+                      <%= shippingDetails_pincode %>
+                        <br/>
+            </td>
+            <td style=" font-size: 9px;vertical-align:top;width:50%">
+              <table>
+                <tr>
+                  <td>
+                    <strong>Delivered By: </strong>
+                  </td>
+                  <td>
+                    <%= consumerName %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Time:</strong>
+                  </td>
+                  <td>
+                    <%= shippingDetails_deliveryDate %>
+                  </td>
+                </tr>
+                <!-- <tr>
+                  <td><strong>Issued By:</strong> </td>
+                  <td>________________</td>
+                </tr> -->
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="margin-top:10px;">
+        <strong>Kits Shipped: </strong>
+
+
+        <% if(shippingDetails_products.length > 0) { %>
+
+          <div style="padding: 5px 0px;float:right">
+            <strong>Total Number of Products:
+              <%= shippingDetails_products.length %>
+            </strong>
+          </div>
+      </div>
+
+      <div style="padding:10px;margin-top:10px; border-width: 1px; border-color: #ccc; border-style: solid; ">
+        <table>
+          <% for(var i=0; i < orderProducts.length; i++) { %>
+
+            <table style="width:100%;margin-top:10px">
+              <tr>
+                <td style="width:50%">
+                  <strong>Order #:</strong>
+                  <%= orderProducts[i].code %>
+                </td>
+                <td>
+                  <strong>Surgeon:</strong>
+                  <%= orderProducts[i].surgeon %>
+                </td>
+              </tr>
+              <tr>
+                <td style="width:50%">
+                  <strong>Surgery:</strong>
+                  <%= orderProducts[i].surgery %>
+                </td>
+                <td>
+                  <strong>Surgery Date:</strong>
+                  <%= orderProducts[i].etd %>
+                </td>
+              </tr>
+
+            </table>
+
+            <hr style="border-top:dotted 1px #ccc; width:70%">
+            <table style="width:100%">
+              <tr>
+                <td>
+                  <strong>Product Code</strong>
+                </td>
+                <td>
+                  <strong>Product Name</strong>
+                </td>
+                <td>
+                  <strong>Delivery Status</strong>
+                </td>
+              </tr>
+
+              <% for(var j=0; j < orderProducts[i].products.length; j++) { %>
+
+
+                <tr>
+                  <td style="width:25%">
+                    <%= orderProducts[i].products[j].code %>
+                  </td>
+                  <td style="width:50%;">
+                    <%= orderProducts[i].products[j].name %>
+                  </td>
+                  <td style="width:25%">
+                    <%= orderProducts[i].products[j].deliveryStatusLabel %>
+                  </td>
+                </tr>
+
+
+
+
+                <% } %>
+
+            </table>
+            <% if(orderProducts.length -1 != i) { %>
+              <hr>
+              <% } %>
+                <% } %>
+        </table>
+
+        <%}%>
+          <% if(shippingDetails_products.length == 0) { %>
+
+            <div style="margin-top:10px;" id="nokit">
+              <div>
+                <strong>No kits found</strong>
+              </div>
+            </div>
+            <%}%>
+
+
+      </div>
+
+      <div style="margin-top:10px;">
+        <strong>Notes: </strong>
+
+
+        <% if(notes.length > 0) { %>
+
+          <div style="padding: 5px 0px;float:right">
+            <strong>Total Number of Notes:
+              <%= notes.length %>
+            </strong>
+          </div>
+      </div>
+      <div style="padding:10px;margin-top:10px; border-width: 1px; border-color: #ccc; border-style: solid; ">
+
+        <% for(var i=0; i < notes.length; i++) { %>
+
+          <table style="width:100%;margin-top:10px">
+            <tr>
+              <td style="width:50%">
+                <strong>Items :</strong>
+                <%= notes[i].items %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Comment:</strong>
+                <%= notes[i].comment %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Author:</strong>
+                <%= notes[i].author %>
+              </td>
+            </tr>
+
+          </table>
+
+          <hr style="border-top:dotted 1px #ccc; width:70%">
+          <% } %>
+
+            <%}%>
+              <% if(notes.length == 0) { %>
+
+                <div style="margin-top:10px;" id="nokit">
+                  <div>
+                    <strong>No Notes found</strong>
+                  </div>
+                </div>
+                <%}%>
+
+
+      </div>
+
+
+
+      <div style="margin-top:10px;">
+        <strong>Instructions:</strong>
+        <p>Instruments must be returned free of blood borne surface contamination. All opened package sterile and non sterile.
+          Damaged instruments and trials will be charged back to hospital.</p>
+      </div>
+
+      <div style="margin-top:10px;border-bottom:1px solid #ddd;padding-bottom:10px;">
+        <table>
+          <tbody>
+            <tr>
+              <!-- <th style="width:140px;">Surgeon: </th>
+              <td style="width:200px;">
+                <%= doctorName %>
+              </td> -->
+              <!-- <th style="width:100px;">Case No.: </th>
+              <td style="width:240px;">
+                <%= caseNo %>
+              </td>
+            </tr> -->
+              <tr>
+                <!-- <th style="width:140px;">Surgery Date: </th>
+                <td style="width:200px;">
+                  <%= surgeryDate %>
+                </td> -->
+                <th style="width:100px;text-align: left;">Shipment No.: </th>
+                <td style="width:240px;">
+                  <%= shipmentNo %>
+                </td>
+              </tr>
+              <tr>
+                <!-- <th style="width:140px;">Sales Representative: </th>
+                <td style="width:200px;">
+                  <%= consumerName %>
+                </td> -->
+                <th style="text-align: left;">Hospital: </th>
+                <td>
+                  <%= hospitalName %>
+                </td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <!-- <th style="width:100px;">Surgery: </th>
+                <td style="width:240px;">
+                  <%= procedureName %>
+                </td> -->
+              </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:10px;">
+        <table>
+          <tbody>
+            <tr>
+              <th style="width:120px;text-align: left;">Received By: </th>
+              <td style="width:200px;">
+                <%= shippingDetails_recipientName %>
+                  <%= shippingDetails_recipientMobile %>
+              </td>
+              <th style="width:100px;">Date Received: </th>
+              <td style="width:200px;">
+                <%= shippingDetails_deliveryDate %>
+              </td>
+
+
+            </tr>
+            <tr>
+              <th style="width:100px;text-align: left;">Signature: </th>
+              <td style="width:200px;">
+                <%= signatureImage %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

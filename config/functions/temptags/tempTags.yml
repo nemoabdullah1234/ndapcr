@@ -1,0 +1,46 @@
+handler: routing/things.routeTempTags
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeTempTags
+events:
+  - http:
+      path: /temptags/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  - http:
+      path: /temptags
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+  
+  - http:
+      path: /temptags/{id}
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+
+  - http:
+      path: /temptags
+      method: post
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+        
+  - http:
+      path: /temptags/scanhistory/{productId}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

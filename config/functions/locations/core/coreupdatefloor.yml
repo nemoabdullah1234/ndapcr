@@ -1,0 +1,11 @@
+handler: handlers/location/floor.updateFloor
+name: ${self:custom.constants.defaults.prefix}${self:service}-updateFloor
+events:
+  - http:
+      path: /floors/{id}
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

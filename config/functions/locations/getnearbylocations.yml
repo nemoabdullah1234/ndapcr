@@ -1,0 +1,11 @@
+handler: handlers/tracking/location.findNearbyLocation
+name: ${self:custom.constants.defaults.prefix}${self:service}-nearbylocation
+events:
+  - http:
+      path: /nearbylocation
+      method: get
+      cors: true
+      #authorizer: 
+        #name: customauthorizer
+        #resultTtlInSeconds: 0
+        #identitySource: method.request.header.Authorization

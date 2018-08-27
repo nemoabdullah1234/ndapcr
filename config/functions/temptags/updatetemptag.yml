@@ -1,0 +1,11 @@
+handler: handlers/tempTags.updateTempTag
+name: ${self:custom.constants.defaults.prefix}${self:service}-temptags-update
+events:
+  - http:
+      path: /temptags/{id}
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

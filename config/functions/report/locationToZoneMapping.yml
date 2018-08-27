@@ -1,0 +1,12 @@
+handler: handlers/report.locationToZoneMapping
+name: ${self:custom.constants.defaults.prefix}${self:service}-locationToZoneMapping
+timeout: 30
+events:
+  - http:
+      path: /location-zone-mapping
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,16 @@
+{
+  "description": "Response",
+  "type": "object",
+  "required": ["name", "code", "status"],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}

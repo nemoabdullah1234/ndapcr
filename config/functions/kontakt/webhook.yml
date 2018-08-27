@@ -1,0 +1,37 @@
+handler: handlers/kontakt.recieveKontaktData
+events:
+  - http:
+      path: kontakt/webhook
+      method: post
+      cors: true
+      # authorizer:
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization
+        # documentation:
+        #     summary: "Get an attribute by ID"
+        #     description: "Get an attribute by ID"
+        #     requestHeaders:
+        #     -
+        #       name: "Authorization"
+        #       description: "Custom Authorizer Header Token"
+        #     pathParams:
+        #       -
+        #         name: "id"
+        #         required: true
+        #         description: "ID of the attribute you want to get details of"
+        #     methodResponses:
+        #       -
+        #         statusCode: "200"
+        #         responseBody:
+        #           description: "Response body description"
+        #         responseHeaders:
+        #             -
+        #               name: "x-superheader"
+        #               description: "this is a super header"
+        #         responseModels:
+        #           "application/json": "CreateResponse"
+        #       -
+        #         statusCode: "400"
+        #         responseModels:
+        #           "application/json": "ErrorResponse"

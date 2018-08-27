@@ -1,0 +1,11 @@
+handler: handlers/gateway.saveGateway
+name: ${self:custom.constants.defaults.prefix}${self:service}-gateways-save
+events:
+  - http:
+      path: /gateways
+      method: post
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

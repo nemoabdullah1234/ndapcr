@@ -1,0 +1,11 @@
+handler: handlers/shipment.pickShipment
+name: ${self:custom.constants.defaults.prefix}${self:service}-pick
+events:
+  - http:
+      path: /carrier/pick
+      method: put
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

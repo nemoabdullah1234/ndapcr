@@ -1,0 +1,11 @@
+handler: handlers/appSettings.getSpecificSettingForApp
+name: ${self:custom.constants.defaults.prefix}${self:service}-getSpecificSettingForApp
+events:
+  - http:
+      path: /{settingType}/
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

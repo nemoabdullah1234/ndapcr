@@ -1,0 +1,12 @@
+handler: handlers/trackingreports.sensorEntraceTracking
+name: ${self:custom.constants.defaults.prefix}${self:service}-sensorEntraceTracking
+timeout: 30
+events:
+  - http:
+      path: /sensor-entrance
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

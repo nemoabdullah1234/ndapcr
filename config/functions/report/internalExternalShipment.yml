@@ -1,0 +1,11 @@
+handler: handlers/report.internalExternalShipment
+name: ${self:custom.constants.defaults.prefix}${self:service}-internalExternalShipment
+events:
+  - http:
+      path: /internal-external-shipments
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

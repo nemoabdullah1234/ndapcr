@@ -1,0 +1,32 @@
+{
+  "_id": "objectId",
+  "product": {
+    "id": "prodId",
+    "code": "prodCode",
+    "name": "prodName"
+  },
+  "trackingDetails": {
+    "location": {
+      "id": "locId",
+      "code": "locCode",
+      "name": "locName",
+      "floor": {
+        "id": "floorId",
+        "code": "floorCode",
+        "name": "floorName",
+        "zone": {
+          "id": "zoneId",
+          "code": "zoneCode",
+          "name": "zoneName"
+        }
+      }
+    },
+
+    "thing": {
+      "id": "thingId",
+      "code": "thingCode",
+      "name": "thingName",
+      "type": "thingType"
+    }
+  }
+}

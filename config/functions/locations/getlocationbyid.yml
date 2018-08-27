@@ -1,0 +1,10 @@
+handler: handlers/locations.getLocationById
+events:
+  - http:
+      path: locations/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

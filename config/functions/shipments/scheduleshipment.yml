@@ -1,0 +1,11 @@
+handler: handlers/shipment.scheduleShipment
+name: ${self:custom.constants.defaults.prefix}${self:service}-schedule
+events:
+  - http:
+      path: /schedule
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

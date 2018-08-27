@@ -1,0 +1,164 @@
+{
+    "Attribute": {
+      "componentName": "Attribute",
+      "Get": {
+        "arn": [
+          "ak-attributes-get",
+          "ak-attributes-getById"
+        ]
+      },
+      "Post": {
+        "arn": [
+          "ak-attributes-save"
+        ]
+      },
+      "Put": {
+        "arn": [
+          "ak-attributes-update"
+        ]
+      },
+      "Delete": {
+        "arn": [
+        ]
+      }
+    },
+    "Category": {
+      "componentName": "Category",
+      "Get": {
+        "arn": [
+          "ak-categories-get",
+          "ak-categories-getById"
+        ]
+      },
+      "Post": {
+        "arn": [
+          "ak-categories-save"
+        ]
+      },
+      "Put": {
+        "arn": [
+          "ak-categories-update"
+        ]
+      },
+      "Delete": {
+        "arn": [
+        ]
+      }
+    },
+    "Products": {
+      "componentName": "Products",
+      "Get": {
+        "arn": [
+          "ak-products-get",
+          "ak-products-getById",
+          "ak-products-getfloorzoneproducts",
+          "ak-products-getProductsAtLocation"
+        ]
+      },
+      "Post": {
+        "arn": [
+          "ak-products-save"
+        ]
+      },
+      "Put": {
+        "arn": [
+          "ak-products-update"
+        ]
+      }
+    },
+    "Collections": {
+      "componentName": "Collections",
+      "Get": {
+        "arn": [
+          "ak-collections-get",
+          "ak-collections-getByID",
+          "ak-collections-getCollectionTypes"
+        ]
+      },
+      "Post": {
+        "arn": [
+          "ak-collections-save"
+        ]
+      },
+      "Put": {
+        "arn": [
+          "ak-collections-update"
+        ]
+      },
+      "Delete": {
+        "arn": [
+        ]
+      }
+    },
+    "Things": {
+      "componentName": "Things",
+      "Get": {
+        "arn": [
+          "ak-things-getThings",
+          "ak-things-getFilteredThings",
+          "ak-things-getThingByID",
+          "ak-things-getGateways",
+          "ak-things-getGatewayById",
+          "ak-things-getDevices",
+          "ak-things-getDeviceById",
+          "ak-things-fetchthing"
+        ]
+      },
+      "Post": {
+        "arn": [
+          "ak-things-saveThing",
+          "ak-things-saveGateway",
+          "ak-things-saveDevice",
+          "ak-things-syncthings"
+        ]
+      },
+      "Put": {
+        "arn": [
+          "ak-things-updateThing",
+          "ak-things-updateGateway",
+          "ak-things-updateDevice"
+        ]
+      }
+    },
+    "Locations": {
+      "componentName": "Locations",
+      "Get": {
+        "arn": [
+          "ak-locations-akngGetLocation",
+          "ak-locations-akngGetLocationByID",
+          "ak-locations-getNearbyLocation",
+          "ak-locations-findZone",
+          "ak-locations-getfloorbylocid"
+        ]
+      },
+      "Post": {
+        "arn": [
+          "ak-locations-akngSaveLocation"
+        ]
+      },
+      "Put": {
+        "arn": [
+          "ak-locations-akngUpdateLocation"
+        ]
+      }
+    },
+    "Tags": {
+      "componentName": "Tags",
+      "Get": {
+        "arn": [
+          "ak-tags-get",
+          "ak-tags-getById"
+        ]
+      },
+      "Post": {
+        "arn": [
+          "ak-tags-save"
+        ]
+      },
+      "Put": {
+        "arn": [
+          "ak-tags-update"
+        ]
+      }
+    }
+  }

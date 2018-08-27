@@ -1,0 +1,11 @@
+handler: handlers/order.getOrdersForMobile
+name: ${self:custom.constants.defaults.prefix}${self:service}-getordersformobile
+events:
+  - http:
+      path: /salesrep
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

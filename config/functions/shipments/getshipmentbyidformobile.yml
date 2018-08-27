@@ -1,0 +1,11 @@
+handler: handlers/shipment.getShipmentForMobileById
+name: ${self:custom.constants.defaults.prefix}${self:service}-getByIdForMobile
+events:
+  - http:
+      path: /carrier/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,11 @@
+handler: handlers/report.stationaryShipments
+name: ${self:custom.constants.defaults.prefix}${self:service}-stationaryShipments
+events:
+  - http:
+      path: /stationary-shipments
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

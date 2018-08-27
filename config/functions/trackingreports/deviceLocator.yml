@@ -1,0 +1,12 @@
+handler: handlers/trackingreports.deviceLocator
+name: ${self:custom.constants.defaults.prefix}${self:service}-deviceLocator
+timeout: 30
+events:
+  - http:
+      path: /device-locator
+      method: get
+      cors: true
+      authorizer: 
+       name: customauthorizer
+       resultTtlInSeconds: 0
+       identitySource: method.request.header.Authorization

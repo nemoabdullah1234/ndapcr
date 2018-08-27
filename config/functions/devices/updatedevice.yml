@@ -1,0 +1,11 @@
+handler: handlers/device.updateDevice
+name: ${self:custom.constants.defaults.prefix}${self:service}-devices-update
+events:
+  - http:
+      path: /devices/{id}
+      method: put
+      cors: true
+      # authorizer:
+      #    name: customauthorizer
+      #    resultTtlInSeconds: 0
+      #    identitySource: method.request.header.Authorization

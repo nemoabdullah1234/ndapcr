@@ -1,0 +1,21 @@
+handler: routing/trackingreports.routeTrackingReports
+name: ${self:custom.constants.defaults.prefix}${self:service}-routeTrackingReports
+timeout: 30
+events:
+  - http:
+      path: /{path}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+
+  - http:
+      path: /{path}/{id}
+      method: get
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

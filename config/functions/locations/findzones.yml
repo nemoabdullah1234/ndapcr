@@ -1,0 +1,11 @@
+handler: handlers/tracking/location.findZone
+name: ${self:custom.constants.defaults.prefix}${self:service}-findzone
+events:
+  - http:
+      path: /findzone
+      method: post
+      cors: true
+      #authorizer: 
+        #name: customauthorizer
+        #resultTtlInSeconds: 0
+        #identitySource: method.request.header.Authorization

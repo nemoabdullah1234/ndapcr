@@ -1,0 +1,11 @@
+handler: handlers/order.getOrdersHistoryForMobile
+name: ${self:custom.constants.defaults.prefix}${self:service}-getordershistoryformobile
+events:
+  - http:
+      path: /salesrep/history
+      method: get
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

@@ -1,0 +1,11 @@
+handler: handlers/things.updateThing
+name: ${self:custom.constants.defaults.prefix}${self:service}-beacons-update
+events:
+  - http:
+      path: /beacons/{id}
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

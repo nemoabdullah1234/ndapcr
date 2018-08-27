@@ -1,0 +1,10 @@
+{
+  "Open" : 10,
+  "Scheduled" : 20,
+  "SoftShipped" : 30,
+  "Shipped": 40,
+  "SoftDelivered" : 50,
+  "Delivered" : 60,
+  "Canceled" : 70,
+  "Closed" : 90
+}

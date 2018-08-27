@@ -1,0 +1,11 @@
+handler: handlers/movement.history
+name: ${self:custom.constants.defaults.prefix}${self:service}-history
+events:
+  - http:
+      path: /history
+      method: get
+      cors: true
+      # authorizer: 
+      #   name: customauthorizer
+      #   resultTtlInSeconds: 0
+      #   identitySource: method.request.header.Authorization

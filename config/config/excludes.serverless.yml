@@ -1,0 +1,26 @@
+- package.json
+# - node_modules/**
+- serverless*
+- essearch
+- config
+- node_modules/concat-stream/**
+- node_modules/es6-promise/**
+- node_modules/extract-zip/**
+- node_modules/fd-slicer/**
+- node_modules/fs-extra/**
+#- node_modules/graceful-fs/**
+- node_modules/hasha/**
+- node_modules/html-pdf/**
+- node_modules/is-stream/**
+- node_modules/jsonfile/**
+- node_modules/kew/**
+- node_modules/klaw/**
+- node_modules/pend/**
+- node_modules/phantomjs-prebuilt/**
+- node_modules/pinkie/**
+- node_modules/pinkie-promise/**
+- node_modules/progress/**
+- node_modules/request-progress/**
+- node_modules/throttleit/**
+- node_modules/typedarray/**
+- node_modules/yauzl/**

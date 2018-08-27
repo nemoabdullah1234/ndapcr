@@ -1,0 +1,11 @@
+handler: handlers/nfcTag.saveNfcTag
+name: ${self:custom.constants.defaults.prefix}${self:service}-nfctag-save
+events:
+  - http:
+      path: /nfctags
+      method: post
+      cors: true
+      authorizer:
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

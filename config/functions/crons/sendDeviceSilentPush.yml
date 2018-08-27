@@ -1,0 +1,5 @@
+handler: handlers/cron.sendDeviceSilentPush
+name: ${self:custom.constants.defaults.prefix}${self:service}-sendDeviceSilentPush
+timeout: 300
+events:
+  - schedule: rate(1 day)

@@ -1,0 +1,11 @@
+handler: handlers/appSettings.updateSpecificSettingForApp
+name: ${self:custom.constants.defaults.prefix}${self:service}-updateSpecificSettingForApp
+events:
+  - http:
+      path: /{settingType}/
+      method: put
+      cors: true
+      authorizer: 
+        name: customauthorizer
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization

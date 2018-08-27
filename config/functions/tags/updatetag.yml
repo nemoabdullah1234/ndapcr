@@ -1,0 +1,11 @@
+handler: handlers/tags.updateTag
+name: ${self:custom.constants.defaults.prefix}${self:service}-update
+events:
+  - http:
+      path: /{id}
+      method: put
+      cors: true
+      authorizer:
+         name: customauthorizer
+         resultTtlInSeconds: 0
+         identitySource: method.request.header.Authorization

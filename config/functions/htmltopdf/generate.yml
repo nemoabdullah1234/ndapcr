@@ -1,0 +1,2 @@
+handler: handlers/htmltopdf.generate
+name: ${self:custom.constants.defaults.prefix}${self:service}-generate
